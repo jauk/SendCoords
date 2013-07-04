@@ -1,0 +1,17 @@
+name: SendCoords
+main: com.justinmaslin.SendCoords.SendMain
+version: 0.1
+
+commands:
+    sendcoords:
+        description: Send your coordinates to another player.
+        usage: /sendcoords [player]
+        permission: sendcoords.use
+        permission-message: You don't have <permission>.
+        default: true
+    sc:
+        description: Send your coordinates to another player.
+        usage: /sc [player]
+        permission: sendcoords.use
+        permission-message: You don't have <permission>.
+        default: true
