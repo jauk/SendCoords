@@ -35,7 +35,7 @@ public class SendMain extends JavaPlugin
 			else
 			{
 				if (!(Bukkit.getServer().getPlayer(args[0]) instanceof Player))
-					sender.sendMessage("§b[SendCoords] §eThis player is offline or does not exist!");
+					sender.sendMessage("§b[SendCoords] §eThat player is offline or does not exist!");
 
 				else
 				{		
