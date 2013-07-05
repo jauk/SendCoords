@@ -23,26 +23,34 @@ public class SendMain extends JavaPlugin
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 	{
-		Player target = (Bukkit.getServer().getPlayer(args[0]));
-
-		Location pos = ((Player) sender).getLocation();
-
-		int xPos = pos.getBlockX();
-		int yPos = pos.getBlockY();
-		int zPos = pos.getBlockZ();
 
 		if (cmd.getName().equalsIgnoreCase("sendcoords") && sender.hasPermission("sendcoords.use"))
 		{
 			if (!(sender instanceof Player))
-				sender.sendMessage("You must run this command in-game!");
+				sender.sendMessage("§b[SendCoords] §eYou must run this command in-game!");
 
-			//if (args.length != 2)
-			//	sender.sendMessage("§b[SendCoords] §eThe correct syntax is: §c/sendcoords <name>");
-			
-			//else
+			else
 			{
-				sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
-				target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+xPos+", "+yPos+", "+zPos+".");
+				if (!(Bukkit.getServer().getPlayer(args[0]) instanceof Player))
+					sender.sendMessage("§b[SendCoords] §eThis player is offline or does not exist!");
+
+				else
+				{		
+					Player target = (Bukkit.getServer().getPlayer(args[0]));
+
+					Location pos = ((Player) sender).getLocation();
+
+					int xPos = pos.getBlockX();
+					int yPos = pos.getBlockY();
+					int zPos = pos.getBlockZ();
+
+				
+					//else
+					{
+						sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
+						target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+xPos+", "+yPos+", "+zPos+".");
+					}
+				}
 			}
 
 			return true;
