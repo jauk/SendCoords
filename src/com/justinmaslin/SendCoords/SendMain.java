@@ -29,6 +29,9 @@ public class SendMain extends JavaPlugin
 			if (!(sender instanceof Player))
 				sender.sendMessage("§b[SendCoords] §eYou must run this command in-game!");
 
+			else if (args.length != 1)
+				sender.sendMessage("§b[SendCoords] §eThe correct usage is: §c/sendcoords <name>");
+
 			else
 			{
 				if (!(Bukkit.getServer().getPlayer(args[0]) instanceof Player))
@@ -44,12 +47,9 @@ public class SendMain extends JavaPlugin
 					int yPos = pos.getBlockY();
 					int zPos = pos.getBlockZ();
 
-				
-					//else
-					{
-						sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
-						target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+xPos+", "+yPos+", "+zPos+".");
-					}
+					sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
+					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+xPos+", "+yPos+", "+zPos+".");
+
 				}
 			}
 
