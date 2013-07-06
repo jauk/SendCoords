@@ -26,7 +26,7 @@ public class SendMain extends JavaPlugin
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 	{
-		if (cmd.getName().equalsIgnoreCase("sendcoords") && sender.hasPermission("sendcoords.use"))
+		if ((cmd.getName().equalsIgnoreCase("sendcoords") || cmd.getName().equalsIgnoreCase("sc")) && sender.hasPermission("sendcoords.use"))
 		{
 			if (!(sender instanceof Player))
 				sender.sendMessage("§b[SendCoords] §eYou must run this command in-game!");
