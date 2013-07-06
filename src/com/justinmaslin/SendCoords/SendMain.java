@@ -1,5 +1,7 @@
 package com.justinmaslin.SendCoords;
 
+import java.text.DecimalFormat;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -9,7 +11,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class SendMain extends JavaPlugin
 {
-
+	DecimalFormat df = new DecimalFormat("0.0");
+	
 	public void onEnable()
 	{
 		getLogger().info("[SendCoords] Plugin Enabled!");
@@ -50,7 +53,7 @@ public class SendMain extends JavaPlugin
 										
 					double distance=Math.sqrt(Math.pow((senderPos.getX()-targetPos.getBlockX()), 2)+Math.pow((senderPos.getBlockZ()-targetPos.getBlockZ()), 2));
 					
-					target.sendMessage("§b[SendCoords] §e"+sender+" is "+distance+" blocks away from you.");
+					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is "+df.format(distance)+" blocks away from you.");
 					
 				}
 			}
