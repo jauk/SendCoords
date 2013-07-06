@@ -50,8 +50,8 @@ public class SendMain extends JavaPlugin
 
 					
 					sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
-					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+senderPos.getBlockX()+", "+senderPos.getBlockY()+", "+senderPos.getBlockZ()+
-							" which is "+df.format(distance)+" blocks away.");
+					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: §6"+senderPos.getBlockX()+", "+senderPos.getBlockY()+", "+senderPos.getBlockZ()+
+							" §ewhich is §6"+df.format(distance)+" §eblocks away.");
 				}
 			}
 
