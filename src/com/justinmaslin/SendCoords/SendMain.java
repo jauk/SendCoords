@@ -45,16 +45,13 @@ public class SendMain extends JavaPlugin
 
 					Location senderPos = ((Player) sender).getLocation();
 					Location targetPos = ((Player) target).getLocation();
-
-					sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
-					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+senderPos.getBlockX()+", "+senderPos.getBlockY()+", "+senderPos.getBlockZ()+".");
 					
-					// Tell the target how far they are from the sender. 
-										
 					double distance=Math.sqrt(Math.pow((senderPos.getX()-targetPos.getBlockX()), 2)+Math.pow((senderPos.getBlockZ()-targetPos.getBlockZ()), 2));
+
 					
-					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is "+df.format(distance)+" blocks away from you.");
-					
+					sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
+					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+senderPos.getBlockX()+", "+senderPos.getBlockY()+", "+senderPos.getBlockZ()+
+							" which is "+df.format(distance)+" blocks away.");
 				}
 			}
 

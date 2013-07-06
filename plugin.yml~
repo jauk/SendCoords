@@ -1,6 +1,6 @@
 name: SendCoords
 main: com.justinmaslin.SendCoords.SendMain
-version: 0.2
+version: 0.1
 
 commands:
     sendcoords:
