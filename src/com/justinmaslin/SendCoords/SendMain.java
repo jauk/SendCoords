@@ -23,7 +23,6 @@ public class SendMain extends JavaPlugin
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 	{
-
 		if (cmd.getName().equalsIgnoreCase("sendcoords") && sender.hasPermission("sendcoords.use"))
 		{
 			if (!(sender instanceof Player))
@@ -41,23 +40,26 @@ public class SendMain extends JavaPlugin
 				{		
 					Player target = (Bukkit.getServer().getPlayer(args[0]));
 
-					Location pos = ((Player) sender).getLocation();
-
-					int xPos = pos.getBlockX();
-					int yPos = pos.getBlockY();
-					int zPos = pos.getBlockZ();
+					Location senderPos = ((Player) sender).getLocation();
+					Location targetPos = ((Player) target).getLocation();
 
 					sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
-					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+xPos+", "+yPos+", "+zPos+".");
-
+					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: "+senderPos.getBlockX()+", "+senderPos.getBlockY()+", "+senderPos.getBlockZ()+".");
+					
+					// Tell the target how far they are from the sender. 
+										
+					double distance=Math.sqrt(Math.pow((senderPos.getX()-targetPos.getBlockX()), 2)+Math.pow((senderPos.getBlockZ()-targetPos.getBlockZ()), 2));
+					
+					target.sendMessage("§b[SendCoords] §e"+sender+" is "+distance+" blocks away from you.");
+					
 				}
 			}
 
 			return true;
 		}
+		
 
 		return false;
 	}
-
 
 }
