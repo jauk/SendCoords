@@ -48,6 +48,7 @@ public class SendMain extends JavaPlugin
 					
 					double distance=Math.sqrt(Math.pow((senderPos.getX()-targetPos.getBlockX()), 2)+Math.pow((senderPos.getBlockZ()-targetPos.getBlockZ()), 2));
 
+					String direction;					
 					
 					sender.sendMessage("§b[SendCoords] §eCoordinates sent to "+target.getName()+".");
 					target.sendMessage("§b[SendCoords] §e"+sender.getName()+" is at: §6"+senderPos.getBlockX()+", "+senderPos.getBlockY()+", "+senderPos.getBlockZ()+
